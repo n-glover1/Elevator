@@ -5,6 +5,8 @@
  */
 package ElevatorPackage;
 
+import java.awt.Color;
+
 /**
  *
  * @author Noah
@@ -27,122 +29,221 @@ public class ElevatorJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        Title = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        elevator1Panel = new javax.swing.JPanel();
-        e1f3 = new javax.swing.JLabel();
-        e1f2 = new javax.swing.JLabel();
-        e1f1 = new javax.swing.JLabel();
-        elevator2Panel = new javax.swing.JPanel();
-        e2f3 = new javax.swing.JLabel();
-        e2f2 = new javax.swing.JLabel();
-        e2f1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        Elevator1 = new javax.swing.JPanel();
+        elv1flr3Panel = new javax.swing.JPanel();
+        elv1flr3Label = new javax.swing.JLabel();
+        elv1flr2Panel = new javax.swing.JPanel();
+        elv1flr2Label = new javax.swing.JLabel();
+        elv1flr1Panel = new javax.swing.JPanel();
+        elv1flr1Label = new javax.swing.JLabel();
+        Elevator2 = new javax.swing.JPanel();
+        elv2flr3Panel = new javax.swing.JPanel();
+        elv2flr3Label = new javax.swing.JLabel();
+        elv2flr2Panel = new javax.swing.JPanel();
+        elv2flr2Label = new javax.swing.JLabel();
+        elv3flr1Panel = new javax.swing.JPanel();
+        elv2flr1Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Elevator");
+        Title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title.setText("Elevator");
 
-        elevator1Panel.setLayout(new java.awt.GridLayout(3, 0));
+        Elevator1.setBackground(new java.awt.Color(51, 0, 102));
+        Elevator1.setLayout(new java.awt.GridLayout(3, 0));
 
-        e1f3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        e1f3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        e1f3.setText("=][=");
-        elevator1Panel.add(e1f3);
+        elv1flr3Panel.setBackground(new java.awt.Color(0, 0, 204));
 
-        e1f2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        e1f2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        e1f2.setText("=][=");
-        elevator1Panel.add(e1f2);
+        elv1flr3Label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv1flr3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        elv1flr3Label.setText("=][=");
 
-        e1f1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        e1f1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        e1f1.setText("=][=");
-        elevator1Panel.add(e1f1);
+        javax.swing.GroupLayout elv1flr3PanelLayout = new javax.swing.GroupLayout(elv1flr3Panel);
+        elv1flr3Panel.setLayout(elv1flr3PanelLayout);
+        elv1flr3PanelLayout.setHorizontalGroup(
+            elv1flr3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv1flr3PanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(elv1flr3Label)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        elv1flr3PanelLayout.setVerticalGroup(
+            elv1flr3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv1flr3PanelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(elv1flr3Label)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
 
-        elevator2Panel.setLayout(new java.awt.GridLayout(3, 0));
+        Elevator1.add(elv1flr3Panel);
 
-        e2f3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        e2f3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        e2f3.setText("=][=");
-        elevator2Panel.add(e2f3);
+        elv1flr2Panel.setBackground(new java.awt.Color(255, 0, 0));
 
-        e2f2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        e2f2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        e2f2.setText("=][=");
-        elevator2Panel.add(e2f2);
+        elv1flr2Label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv1flr2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        elv1flr2Label.setText("=][=");
 
-        e2f1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        e2f1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        e2f1.setText("=][=");
-        elevator2Panel.add(e2f1);
+        javax.swing.GroupLayout elv1flr2PanelLayout = new javax.swing.GroupLayout(elv1flr2Panel);
+        elv1flr2Panel.setLayout(elv1flr2PanelLayout);
+        elv1flr2PanelLayout.setHorizontalGroup(
+            elv1flr2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, elv1flr2PanelLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(elv1flr2Label)
+                .addGap(24, 24, 24))
+        );
+        elv1flr2PanelLayout.setVerticalGroup(
+            elv1flr2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv1flr2PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(elv1flr2Label)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
 
-        jLabel2.setText("Down: W");
+        Elevator1.add(elv1flr2Panel);
 
-        jLabel3.setText("Up: A");
+        elv1flr1Panel.setBackground(new java.awt.Color(153, 255, 255));
 
-        jLabel4.setText("Down: S");
+        elv1flr1Label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv1flr1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        elv1flr1Label.setText("=][=");
 
-        jLabel11.setText("Up: Z");
+        javax.swing.GroupLayout elv1flr1PanelLayout = new javax.swing.GroupLayout(elv1flr1Panel);
+        elv1flr1Panel.setLayout(elv1flr1PanelLayout);
+        elv1flr1PanelLayout.setHorizontalGroup(
+            elv1flr1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, elv1flr1PanelLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(elv1flr1Label)
+                .addGap(24, 24, 24))
+        );
+        elv1flr1PanelLayout.setVerticalGroup(
+            elv1flr1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv1flr1PanelLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(elv1flr1Label)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        Elevator1.add(elv1flr1Panel);
+
+        Elevator2.setBackground(new java.awt.Color(0, 153, 0));
+        Elevator2.setLayout(new java.awt.GridLayout(3, 0));
+
+        elv2flr3Panel.setBackground(new java.awt.Color(51, 255, 255));
+
+        elv2flr3Label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv2flr3Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        elv2flr3Label.setText("=][=");
+
+        javax.swing.GroupLayout elv2flr3PanelLayout = new javax.swing.GroupLayout(elv2flr3Panel);
+        elv2flr3Panel.setLayout(elv2flr3PanelLayout);
+        elv2flr3PanelLayout.setHorizontalGroup(
+            elv2flr3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv2flr3PanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(elv2flr3Label)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        elv2flr3PanelLayout.setVerticalGroup(
+            elv2flr3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv2flr3PanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(elv2flr3Label)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        Elevator2.add(elv2flr3Panel);
+
+        elv2flr2Panel.setBackground(new java.awt.Color(0, 0, 153));
+
+        elv2flr2Label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv2flr2Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        elv2flr2Label.setText("=][=");
+
+        javax.swing.GroupLayout elv2flr2PanelLayout = new javax.swing.GroupLayout(elv2flr2Panel);
+        elv2flr2Panel.setLayout(elv2flr2PanelLayout);
+        elv2flr2PanelLayout.setHorizontalGroup(
+            elv2flr2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv2flr2PanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(elv2flr2Label)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        elv2flr2PanelLayout.setVerticalGroup(
+            elv2flr2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, elv2flr2PanelLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(elv2flr2Label)
+                .addGap(32, 32, 32))
+        );
+
+        Elevator2.add(elv2flr2Panel);
+
+        elv3flr1Panel.setBackground(new java.awt.Color(0, 153, 51));
+
+        elv2flr1Label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        elv2flr1Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        elv2flr1Label.setText("=][=");
+
+        javax.swing.GroupLayout elv3flr1PanelLayout = new javax.swing.GroupLayout(elv3flr1Panel);
+        elv3flr1Panel.setLayout(elv3flr1PanelLayout);
+        elv3flr1PanelLayout.setHorizontalGroup(
+            elv3flr1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, elv3flr1PanelLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(elv2flr1Label)
+                .addGap(24, 24, 24))
+        );
+        elv3flr1PanelLayout.setVerticalGroup(
+            elv3flr1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(elv3flr1PanelLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(elv2flr1Label)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        Elevator2.add(elv3flr1Panel);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(140, 140, 140)
+                .addComponent(Elevator1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(elevator1Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(elevator2Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addComponent(Elevator2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(elevator1Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(elevator2Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
-                .addGap(50, 50, 50)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(35, 35, 35))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Elevator2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Elevator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(Title)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -187,19 +288,21 @@ public class ElevatorJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel e1f1;
-    private javax.swing.JLabel e1f2;
-    private javax.swing.JLabel e1f3;
-    private javax.swing.JLabel e2f1;
-    private javax.swing.JLabel e2f2;
-    private javax.swing.JLabel e2f3;
-    private javax.swing.JPanel elevator1Panel;
-    private javax.swing.JPanel elevator2Panel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel Elevator1;
+    private javax.swing.JPanel Elevator2;
+    private javax.swing.JLabel Title;
+    private javax.swing.JLabel elv1flr1Label;
+    private javax.swing.JPanel elv1flr1Panel;
+    private javax.swing.JLabel elv1flr2Label;
+    private javax.swing.JPanel elv1flr2Panel;
+    private javax.swing.JLabel elv1flr3Label;
+    private javax.swing.JPanel elv1flr3Panel;
+    private javax.swing.JLabel elv2flr1Label;
+    private javax.swing.JLabel elv2flr2Label;
+    private javax.swing.JPanel elv2flr2Panel;
+    private javax.swing.JLabel elv2flr3Label;
+    private javax.swing.JPanel elv2flr3Panel;
+    private javax.swing.JPanel elv3flr1Panel;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
