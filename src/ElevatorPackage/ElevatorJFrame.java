@@ -384,7 +384,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         if (evt.getKeyCode() == 50) {
            
     }//GEN-LAST:event_mainPanelKeyReleased
-
+    }
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
        if (evt.getKeyCode() == 50) {
             for (int i = 1; i < 4; i++) {
