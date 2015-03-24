@@ -26,6 +26,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
     Elevator elevator2 = new Elevator();
     JPanel[] elevator2Panels;
     JLabel[] elevator2Labels;
+    int direction = 0;      //if direction = 1, means someone has called to move up. if direction = 2, means someone has called to move down
 
     /**
      * Creates new form ElevatorJFrame
@@ -42,6 +43,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         }
         elv1flr1Panel.setBackground(closeDoor);
         elv2flr1Panel.setBackground(closeDoor);
+        elevator2.setCurrentFloor(3);
     }
 
     /**
@@ -386,6 +388,32 @@ public class ElevatorJFrame extends javax.swing.JFrame {
                 new ElevatorJFrame().setVisible(true);
             }
         });
+    }
+
+    public Elevator closestElevator(int direction) {
+        if (direction == 1) {
+            if (elevator1.isOccupied() && elevator2.isOccupied() == false) {
+                return elevator2;
+            }
+            if (elevator1.isOccupied() == false && elevator2.isOccupied() && elevator2.isOccupied()) {
+                return elevator1;
+            }
+            if(elevator1.isMoving() == false && elevator2.isMoving())
+                return elevator1;
+            if(elevator1.isMoving() && elevator1.isOccupied() && elevator2.isMoving() == false)
+                return elevator2;
+            //do other things
+        }
+        if (direction == 2) {
+            if (elevator1.isOccupied() && elevator2.isOccupied() == false) {
+                return elevator2;
+            }
+            if (elevator1.isOccupied() == false && elevator2.isOccupied()) {
+                return elevator1;
+            }
+            //do other things
+        }
+        return elevator1;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

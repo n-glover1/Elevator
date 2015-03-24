@@ -58,6 +58,10 @@ public class Elevator {
     public int getFloor() {
         return CurrentFloor;
     }
+    
+    public void setCurrentFloor(int currentFloor) {
+        CurrentFloor = currentFloor;
+    }
 
     public boolean setTargetFloor(int targetFloor) {
         if (targetFloor == CurrentFloor) {
