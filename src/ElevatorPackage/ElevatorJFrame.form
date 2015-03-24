@@ -55,6 +55,9 @@
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="mainPanel">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="mainPanelKeyReleased"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">

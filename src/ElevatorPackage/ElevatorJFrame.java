@@ -85,6 +85,12 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("Elevator");
 
+        mainPanel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                mainPanelKeyReleased(evt);
+            }
+        });
+
         Elevator1.setBackground(new java.awt.Color(51, 0, 102));
         Elevator1.setLayout(new java.awt.GridLayout(3, 0));
 
@@ -355,6 +361,14 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
+        if (evt.getKeyCode() == 50) {
+elevator1.setTargetFloor(2);
+elevator1.move();
+
+        };  // TODO add your handling code here:
+    }//GEN-LAST:event_mainPanelKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -398,10 +412,12 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             if (elevator1.isOccupied() == false && elevator2.isOccupied() && elevator2.isOccupied()) {
                 return elevator1;
             }
-            if(elevator1.isMoving() == false && elevator2.isMoving())
+            if (elevator1.isMoving() == false && elevator2.isMoving()) {
                 return elevator1;
-            if(elevator1.isMoving() && elevator1.isOccupied() && elevator2.isMoving() == false)
+            }
+            if (elevator1.isMoving() && elevator1.isOccupied() && elevator2.isMoving() == false) {
                 return elevator2;
+            }
             //do other things
         }
         if (direction == 2) {
