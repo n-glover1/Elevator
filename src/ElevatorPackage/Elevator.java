@@ -26,11 +26,10 @@ public class Elevator {
 
     }
 
-
     public int getFloor() {
         return CurrentFloor;
     }
-    
+
     public void setCurrentFloor(int currentFloor) {
         CurrentFloor = currentFloor;
     }
@@ -64,7 +63,7 @@ public class Elevator {
             System.out.print("");
         }
         //HoldDoor();
-        
+
         return true;
     }
 
@@ -90,7 +89,7 @@ public class Elevator {
     }
 
     public void move() {
-        
+
         int differance = TargetFloor - CurrentFloor;
         if (differance < 0) {
             differance *= -1;
@@ -102,31 +101,39 @@ public class Elevator {
             while (Moving) {
                 System.out.print("");
             }
-            CurrentFloor++;
-            if(i == differance-1) {
+            if (TargetFloor - CurrentFloor > 0) {
+                CurrentFloor++;
+            } else {
+                CurrentFloor--;
+            }
+            if (i == differance - 1) {
                 OpenDoor();
             }
             Moving = true;
         }
     }
-        class OpenTask extends TimerTask {
+
+    class OpenTask extends TimerTask {
 
         public void run() {
             DoorOpen = true;
         }
     }
+
     class CloseTask extends TimerTask {
 
         public void run() {
             DoorOpen = false;
         }
     }
+
     class MoveTask extends TimerTask {
 
         public void run() {
             Moving = false;
         }
     }
+
     class HoldTask extends TimerTask {
 
         public void run() {
