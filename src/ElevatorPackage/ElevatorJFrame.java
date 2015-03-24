@@ -362,22 +362,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
     private void MoveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveBtnActionPerformed
         // TODO add your handling code here:
-        for (int i = 1; i < 4; i++) {
-            if (elevator1Labels[i].getText() != doorClose) {
-                elevator1Labels[i].setText(doorClose);
-            }
-            if (elevator1Panels[i].getBackground() != emptyFloor) {
-                elevator1Panels[i].setBackground(emptyFloor);
-            }
-        }
-        elevator1.setTargetFloor(2);
-        elevator1.move();
-
-        if (elevator1.isDoorOpen()) {
-            elevator1.getFloor();
-            elevator1Labels[elevator1.getFloor()].setText(doorOpen);
-            elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
-        }
+       move();
     }//GEN-LAST:event_MoveBtnActionPerformed
 
     private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
@@ -458,6 +443,26 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         });
     }
 
+    
+    public void move() {
+         for (int i = 1; i < 4; i++) {
+            if (elevator1Labels[i].getText() != doorClose) {
+                elevator1Labels[i].setText(doorClose);
+            }
+            if (elevator1Panels[i].getBackground() != emptyFloor) {
+                elevator1Panels[i].setBackground(emptyFloor);
+            }
+        }
+        elevator1.setTargetFloor(2);
+        elevator1.move();
+
+        if (elevator1.isDoorOpen()) {
+            elevator1.getFloor();
+            elevator1Labels[elevator1.getFloor()].setText(doorOpen);
+            elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
+        }
+    }
+    
     public Elevator closestElevator(int direction) {
         if (direction == 1) {
             if (elevator1.isOccupied() && elevator2.isOccupied() == false) {
