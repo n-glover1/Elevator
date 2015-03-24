@@ -45,9 +45,11 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         for (int i = 0; i < 6; i++) {
             allLabels[i].setText(doorClose);
         }
-        elv1flr1Panel.setBackground(closeDoor);
-        elv2flr1Panel.setBackground(closeDoor);
         elevator2.setCurrentFloor(3);
+        elevator1Panels[elevator1.getFloor()].setBackground(closeDoor);
+        elevator2Panels[elevator2.getFloor()].setBackground(closeDoor);
+        
+        
     }
 
     /**
@@ -367,13 +369,13 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
     private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
         if (evt.getKeyCode() == 49) {
-            move(1);
+            move(1,elevator1);
         };
         if (evt.getKeyCode() == 50) {
-            move(2);
+            move(2,elevator1);
         };  // TODO add your handling code here:
         if (evt.getKeyCode() == 51) {
-            move(3);
+            move(3, elevator1);
         };
     }//GEN-LAST:event_mainPanelKeyReleased
 
@@ -416,7 +418,8 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         });
     }
 
-    public void move(int target) {
+    public void move(int target, Elevator elevator) {
+        if(elevator == elevator1) {
         for (int i = 1; i < 4; i++) {
             if (elevator1Labels[i].getText() != doorClose) {
                 elevator1Labels[i].setText(doorClose);
@@ -432,6 +435,24 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             elevator1.getFloor();
             elevator1Labels[elevator1.getFloor()].setText(doorOpen);
             elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
+        }
+        }
+        else if(elevator == elevator2) {
+            for (int i = 1; i < 4; i++) {
+            if (elevator2Labels[i].getText() != doorClose) {
+                elevator2Labels[i].setText(doorClose);
+            }
+            if (elevator2Panels[i].getBackground() != emptyFloor) {
+                elevator2Panels[i].setBackground(emptyFloor);
+            }
+        }
+        elevator2.setTargetFloor(target);
+        elevator2.move();
+
+        if (elevator2.isDoorOpen()) {
+            elevator2Labels[elevator2.getFloor()].setText(doorOpen);
+            elevator2Panels[elevator2.getFloor()].setBackground(openDoor);
+        }
         }
     }
 
