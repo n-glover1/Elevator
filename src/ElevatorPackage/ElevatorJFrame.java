@@ -6,6 +6,8 @@
 package ElevatorPackage;
 
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -17,6 +19,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
     Color openDoor = new Color(153, 255, 153);
     Color closeDoor = new Color(255, 255, 153);
+    Color emptyFloor = new Color(240, 240, 240);
     String doorClose = "=][=";
     String doorOpen = "]  [";
     JLabel[] allLabels;
@@ -71,13 +74,13 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         elv2flr2Label = new javax.swing.JLabel();
         elv2flr1Panel = new javax.swing.JPanel();
         elv2flr1Label = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        flr3InstructionLabel = new javax.swing.JLabel();
+        flr2UpInstructionLabel = new javax.swing.JLabel();
+        flr2DownInstructionLabel = new javax.swing.JLabel();
+        flr1InstructionLabel = new javax.swing.JLabel();
+        OpenDoorBtn = new javax.swing.JButton();
+        CloseDoorBtn = new javax.swing.JButton();
+        MoveBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -223,33 +226,33 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
         Elevator2.add(elv2flr1Panel);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setText("Down: W");
+        flr3InstructionLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        flr3InstructionLabel.setText("Down: W");
 
-        jLabel2.setText("Up: A");
+        flr2UpInstructionLabel.setText("Up: A");
 
-        jLabel3.setText("Down: S");
+        flr2DownInstructionLabel.setText("Down: S");
 
-        jLabel4.setText("Up: D");
+        flr1InstructionLabel.setText("Up: D");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        OpenDoorBtn.setText("jButton1");
+        OpenDoorBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                OpenDoorBtnActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        CloseDoorBtn.setText("jButton2");
+        CloseDoorBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                CloseDoorBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        MoveBtn.setText("jButton3");
+        MoveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                MoveBtnActionPerformed(evt);
             }
         });
 
@@ -260,10 +263,10 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(flr3InstructionLabel)
+                    .addComponent(flr2UpInstructionLabel)
+                    .addComponent(flr2DownInstructionLabel)
+                    .addComponent(flr1InstructionLabel))
                 .addGap(22, 22, 22)
                 .addComponent(Elevator1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -271,11 +274,11 @@ public class ElevatorJFrame extends javax.swing.JFrame {
                 .addContainerGap(137, Short.MAX_VALUE))
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(OpenDoorBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CloseDoorBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MoveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
@@ -287,18 +290,18 @@ public class ElevatorJFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel1)
+                .addComponent(flr3InstructionLabel)
                 .addGap(49, 49, 49)
-                .addComponent(jLabel2)
+                .addComponent(flr2UpInstructionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(flr2DownInstructionLabel)
                 .addGap(73, 73, 73)
-                .addComponent(jLabel4)
+                .addComponent(flr1InstructionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(OpenDoorBtn)
+                    .addComponent(CloseDoorBtn)
+                    .addComponent(MoveBtn))
                 .addContainerGap())
         );
 
@@ -325,7 +328,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void OpenDoorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenDoorBtnActionPerformed
         // TODO add your handling code here:
 
         elevator1.OpenDoor();
@@ -334,26 +337,36 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_OpenDoorBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void CloseDoorBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseDoorBtnActionPerformed
         // TODO add your handling code here:
         elevator1.CloseDoor();
         if (!elevator1.isDoorOpen()) {
             elevator1Labels[elevator1.getFloor()].setText(doorClose);
             elevator1Panels[elevator1.getFloor()].setBackground(closeDoor);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_CloseDoorBtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void MoveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveBtnActionPerformed
         // TODO add your handling code here:
-        elevator1.setTargetFloor(3);
-        elevator1.move();
+            for (int i = 1; i < 4; i++) {
+                if (elevator1Labels[i].getText() != doorClose) {
+                    elevator1Labels[i].setText(doorClose);
+                }
+                if (elevator1Panels[i].getBackground() != emptyFloor) {
+                    elevator1Panels[i].setBackground(emptyFloor);
+                }
+            }
+            elevator1.setTargetFloor(2);
+            elevator1.move();
+
         if (elevator1.isDoorOpen()) {
+            elevator1.getFloor();
             elevator1Labels[elevator1.getFloor()].setText(doorOpen);
             elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_MoveBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -398,10 +411,12 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             if (elevator1.isOccupied() == false && elevator2.isOccupied() && elevator2.isOccupied()) {
                 return elevator1;
             }
-            if(elevator1.isMoving() == false && elevator2.isMoving())
+            if (elevator1.isMoving() == false && elevator2.isMoving()) {
                 return elevator1;
-            if(elevator1.isMoving() && elevator1.isOccupied() && elevator2.isMoving() == false)
+            }
+            if (elevator1.isMoving() && elevator1.isOccupied() && elevator2.isMoving() == false) {
                 return elevator2;
+            }
             //do other things
         }
         if (direction == 2) {
@@ -411,15 +426,24 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             if (elevator1.isOccupied() == false && elevator2.isOccupied()) {
                 return elevator1;
             }
+            if (elevator1.isMoving() == false && elevator2.isMoving()) {
+                return elevator1;
+            }
+            if (elevator1.isMoving() && elevator1.isOccupied() && elevator2.isMoving() == false) {
+                return elevator2;
+            }
+
             //do other things
-            //random comment
         }
         return elevator1;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CloseDoorBtn;
     private javax.swing.JPanel Elevator1;
     private javax.swing.JPanel Elevator2;
+    private javax.swing.JButton MoveBtn;
+    private javax.swing.JButton OpenDoorBtn;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel elv1flr1Label;
     private javax.swing.JPanel elv1flr1Panel;
@@ -433,13 +457,10 @@ public class ElevatorJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel elv2flr2Panel;
     private javax.swing.JLabel elv2flr3Label;
     private javax.swing.JPanel elv2flr3Panel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel flr1InstructionLabel;
+    private javax.swing.JLabel flr2DownInstructionLabel;
+    private javax.swing.JLabel flr2UpInstructionLabel;
+    private javax.swing.JLabel flr3InstructionLabel;
     private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

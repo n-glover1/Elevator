@@ -26,34 +26,6 @@ public class Elevator {
 
     }
 
-    class OpenTask extends TimerTask {
-
-        public void run() {
-            DoorOpen = true;
-        }
-    }
-
-    class CloseTask extends TimerTask {
-
-        public void run() {
-            DoorOpen = false;
-        }
-    }
-
-    class MoveTask extends TimerTask {
-
-        public void run() {
-            Moving = false;
-        }
-    }
-
-    class HoldTask extends TimerTask {
-
-        public void run() {
-            isHolding = false;
-
-        }
-    }
 
     public int getFloor() {
         return CurrentFloor;
@@ -130,10 +102,37 @@ public class Elevator {
             while (Moving) {
                 System.out.print("");
             }
+            CurrentFloor++;
             if(i == differance-1) {
                 OpenDoor();
             }
             Moving = true;
         }
     }
+        class OpenTask extends TimerTask {
+
+        public void run() {
+            DoorOpen = true;
+        }
+    }
+    class CloseTask extends TimerTask {
+
+        public void run() {
+            DoorOpen = false;
+        }
+    }
+    class MoveTask extends TimerTask {
+
+        public void run() {
+            Moving = false;
+        }
+    }
+    class HoldTask extends TimerTask {
+
+        public void run() {
+            isHolding = false;
+
+        }
+    }
+
 }
