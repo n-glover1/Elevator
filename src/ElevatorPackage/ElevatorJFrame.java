@@ -382,11 +382,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
     private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
         if (evt.getKeyCode() == 50) {
-           
-    }//GEN-LAST:event_mainPanelKeyReleased
-    }
-    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
-       if (evt.getKeyCode() == 50) {
+            if (evt.getKeyCode() == 50) {
             for (int i = 1; i < 4; i++) {
                 if (elevator1Labels[i].getText() != doorClose) {
                     elevator1Labels[i].setText(doorClose);
@@ -404,6 +400,10 @@ public class ElevatorJFrame extends javax.swing.JFrame {
                 elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
             }
         };  // TODO add your handling code here:
+    }//GEN-LAST:event_mainPanelKeyReleased
+    }
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+      
     }//GEN-LAST:event_formKeyReleased
 
     /**
