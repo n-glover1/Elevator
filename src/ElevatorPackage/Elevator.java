@@ -19,16 +19,39 @@ public class Elevator {
     int TargetFloor = 1;
     boolean Occupied = false;
     boolean Moving = false;
+    boolean isHolding = true;
     Timer Timer = new Timer();
 
     public Elevator() {
 
     }
 
-    class TimeTask extends TimerTask {
+    class OpenTask extends TimerTask {
 
         public void run() {
-            Timer.cancel();
+            DoorOpen = true;
+        }
+    }
+
+    class CloseTask extends TimerTask {
+
+        public void run() {
+            DoorOpen = false;
+        }
+    }
+
+    class MoveTask extends TimerTask {
+
+        public void run() {
+            Moving = false;
+        }
+    }
+
+    class HoldTask extends TimerTask {
+
+        public void run() {
+            isHolding = false;
+
         }
     }
 
@@ -56,40 +79,57 @@ public class Elevator {
         return DoorOpen;
     }
 
-    public void OpenDoor() {
+    public boolean OpenDoor() {
+
         //2 second timer for opening door
-        Timer.schedule(new TimeTask(), 2000);
-        DoorOpen = true;
+        Timer.schedule(new OpenTask(), 2000);
+
+        while (!DoorOpen) {
+            System.out.print("");
+        }
+        //HoldDoor();
+        
+        return true;
+    }
+
+    public boolean HoldDoor() {
         //5 second timer for hold
-        Timer.schedule(new TimeTask(), 5000);
-        //CloseDoor()
+        Timer.schedule(new HoldTask(), 5000);
+
+        while (isHolding) {
+            System.out.print("");
+        }
         CloseDoor();
+        return true;
     }
 
     public boolean CloseDoor() {
         //2 second timer for closing door
-        DoorOpen = false;
-        Timer.schedule(new TimeTask(), 2000);
+        Timer.schedule(new CloseTask(), 2000);
+        while (DoorOpen) {
+            System.out.print("");
+        }
         return true;
+
     }
 
     public void move() {
-        if (DoorOpen == true) {
-            CloseDoor();
+        
+        int differance = TargetFloor - CurrentFloor;
+        if (differance < 0) {
+            differance *= -1;
         }
+        Moving = true;
 
-        //6 second timer for moving between a floor
-        //CurrentFloor < TargetFloor --
-        while (CurrentFloor != TargetFloor) {
-            if (CurrentFloor < TargetFloor) {
-                Timer.schedule(new TimeTask(), 6000);
-                CurrentFloor++;
+        for (int i = 0; i < differance; i++) {
+            Timer.schedule(new MoveTask(), 6000);
+            while (Moving) {
+                System.out.print("");
             }
-            if (CurrentFloor > TargetFloor) {
-                Timer.schedule(new TimeTask(), 6000);
-                CurrentFloor--;
+            if(i == differance-1) {
+                OpenDoor();
             }
+            Moving = true;
         }
-        OpenDoor();
     }
 }
