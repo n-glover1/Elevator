@@ -36,6 +36,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
      */
     public ElevatorJFrame() {
         initComponents();
+        mainPanel.requestFocus();
         allLabels = new JLabel[]{elv1flr3Label, elv1flr2Label, elv1flr1Label, elv2flr3Label, elv2flr2Label, elv2flr1Label};
         elevator1Labels = new JLabel[]{null, elv1flr1Label, elv1flr2Label, elv1flr3Label};
         elevator1Panels = new JPanel[]{null, elv1flr1Panel, elv1flr2Panel, elv1flr3Panel};
@@ -83,6 +84,11 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         MoveBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
 
         Title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -356,6 +362,31 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
     private void MoveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveBtnActionPerformed
         // TODO add your handling code here:
+        for (int i = 1; i < 4; i++) {
+            if (elevator1Labels[i].getText() != doorClose) {
+                elevator1Labels[i].setText(doorClose);
+            }
+            if (elevator1Panels[i].getBackground() != emptyFloor) {
+                elevator1Panels[i].setBackground(emptyFloor);
+            }
+        }
+        elevator1.setTargetFloor(2);
+        elevator1.move();
+
+        if (elevator1.isDoorOpen()) {
+            elevator1.getFloor();
+            elevator1Labels[elevator1.getFloor()].setText(doorOpen);
+            elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
+        }
+    }//GEN-LAST:event_MoveBtnActionPerformed
+
+    private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
+        if (evt.getKeyCode() == 50) {
+           
+    }//GEN-LAST:event_mainPanelKeyReleased
+
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+       if (evt.getKeyCode() == 50) {
             for (int i = 1; i < 4; i++) {
                 if (elevator1Labels[i].getText() != doorClose) {
                     elevator1Labels[i].setText(doorClose);
@@ -367,20 +398,13 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             elevator1.setTargetFloor(2);
             elevator1.move();
 
-        if (elevator1.isDoorOpen()) {
-            elevator1.getFloor();
-            elevator1Labels[elevator1.getFloor()].setText(doorOpen);
-            elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
-        }
-    }//GEN-LAST:event_MoveBtnActionPerformed
-
-    private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
-        if (evt.getKeyCode() == 50) {
-elevator1.setTargetFloor(2);
-elevator1.move();
-
+            if (elevator1.isDoorOpen()) {
+                elevator1.getFloor();
+                elevator1Labels[elevator1.getFloor()].setText(doorOpen);
+                elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
+            }
         };  // TODO add your handling code here:
-    }//GEN-LAST:event_mainPanelKeyReleased
+    }//GEN-LAST:event_formKeyReleased
 
     /**
      * @param args the command line arguments
