@@ -362,37 +362,23 @@ public class ElevatorJFrame extends javax.swing.JFrame {
 
     private void MoveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoveBtnActionPerformed
         // TODO add your handling code here:
-       //move();
+        //move();
     }//GEN-LAST:event_MoveBtnActionPerformed
 
     private void mainPanelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainPanelKeyReleased
-         if (evt.getKeyCode() == 50) {
+        if (evt.getKeyCode() == 49) {
+            move(1);
+        };
+        if (evt.getKeyCode() == 50) {
             move(2);
         };  // TODO add your handling code here:
-           if (evt.getKeyCode() == 51) {
+        if (evt.getKeyCode() == 51) {
             move(3);
-        }; 
+        };
     }//GEN-LAST:event_mainPanelKeyReleased
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
-       if (evt.getKeyCode() == 50) {
-            for (int i = 1; i < 4; i++) {
-                if (elevator1Labels[i].getText() != doorClose) {
-                    elevator1Labels[i].setText(doorClose);
-                }
-                if (elevator1Panels[i].getBackground() != emptyFloor) {
-                    elevator1Panels[i].setBackground(emptyFloor);
-                }
-            }
-            elevator1.setTargetFloor(2);
-            elevator1.move();
 
-            if (elevator1.isDoorOpen()) {
-                elevator1.getFloor();
-                elevator1Labels[elevator1.getFloor()].setText(doorOpen);
-                elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
-            }
-        };  // TODO add your handling code here:
     }//GEN-LAST:event_formKeyReleased
 
     /**
@@ -430,9 +416,8 @@ public class ElevatorJFrame extends javax.swing.JFrame {
         });
     }
 
-    
     public void move(int target) {
-         for (int i = 1; i < 4; i++) {
+        for (int i = 1; i < 4; i++) {
             if (elevator1Labels[i].getText() != doorClose) {
                 elevator1Labels[i].setText(doorClose);
             }
@@ -449,7 +434,7 @@ public class ElevatorJFrame extends javax.swing.JFrame {
             elevator1Panels[elevator1.getFloor()].setBackground(openDoor);
         }
     }
-    
+
     public Elevator closestElevator(int direction) {
         if (direction == 1) {
             if (elevator1.isOccupied() && elevator2.isOccupied() == false) {
